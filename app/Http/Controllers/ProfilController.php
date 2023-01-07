@@ -132,7 +132,7 @@ class ProfilController extends Controller
         $id_user = Session::get('id_user');
         $data = User::where('id', $id_user)->first();
 
-        $pesanan = Pesanan::get();
+        $pesanan = Pesanan::where('id_user', $id_user)->get();
 
         // $pesanan_detail = DB::table('pesanan as a')
         //         ->join('pesanan_detail as b', 'a.id', '=', 'b.id_pesan')

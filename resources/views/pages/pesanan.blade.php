@@ -129,6 +129,7 @@ function showSuccess($success)
                                             ->join('users as d', 'a.id_user', '=', 'd.id')
                                             ->select('a.*','b.harga','b.qty','b.total','c.nama as nama_produk','c.foto')               
                                             ->where('a.id', $row->id)
+                                            ->where('a.id_user', $id_user)
                                             ->get();
                                     @endphp
                                     @foreach($pesanan_detail as $detail)
